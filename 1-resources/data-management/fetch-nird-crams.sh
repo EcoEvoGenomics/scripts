@@ -12,7 +12,7 @@
 #
 #     To call it with nohup, use:
 #
-#     nohup bash fetch-nird-crams.sh > name-of-outfile.out
+#     nohup bash fetch-nird-crams.sh > name-of-outfile.out &
 #
 # NB!
 
