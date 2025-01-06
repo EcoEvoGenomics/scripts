@@ -1,6 +1,6 @@
 name: Test R Library
 
-run-name: ${{ github.actor }} is testing R Library
+run-name: ${{ github.actor }} triggered unit testing of the R Library
 
 on:
   push:
