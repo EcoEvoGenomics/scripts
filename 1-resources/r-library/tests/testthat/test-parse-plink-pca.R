@@ -1,5 +1,5 @@
 
-test_that("Can instantiate new plink_pca_parser quietly", {
+test_that("Can instantiate new plink_pca_parser object without error, warning, or message", {
   expect_no_error({
     inst <- plink_pca_parser$new("../testdata/test.eigenval", "../testdata/test.eigenvec", "TestID")
   })
