@@ -4,17 +4,8 @@ run-name: ${{ github.actor }} is testing R Library
 
 on:
   push:
-    branches:
-      - 'main'
-      - 'setup-r-library'
     paths:
-      - '1-resources/r-library/'
-  pull_request:
-    branches:
-      - 'main'
-      - 'setup-r-library'
-    paths:
-      - '1-resources/r-library/'
+      - '1-resources/r-library/**'
 
 jobs:
   test-r-library:
