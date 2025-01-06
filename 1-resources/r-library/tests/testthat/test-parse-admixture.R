@@ -4,7 +4,7 @@ ACTUAL_CV_ERROR <- c(0.3, 0.25, 0.225)
 ACTUAL_K_MIN_ERROR <- 3
 ACTUAL_N_SAMPLES <- 5
 
-test_that("Can instantiate new admixture_parser object without error, warning, or message", {
+test_that("Can instantiate new admixture_parser quietly", {
   expect_no_error({
     inst <- admixture_parser$new("../testdata/test-admixture", paste("ID", seq(5)), "TestID")
   })
