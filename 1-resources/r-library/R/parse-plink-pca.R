@@ -6,6 +6,10 @@
 #'
 #' @returns An object of class plink_pca_parser
 #'
+#' @import R6
+#' @import readr
+#' @import dplyr
+#'
 parse_plink_pca <- function(eigenval_path, eigenvec_path, id_name = "ID") {
   parser <- plink_pca_parser$new(eigenval_path, eigenvec_path, id_name)
   return(parser)

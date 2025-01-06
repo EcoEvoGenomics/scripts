@@ -6,6 +6,10 @@
 #'
 #' @returns An object of class admixture_parser
 #'
+#' @import R6
+#' @import stringr
+#' @import dplyr
+#'
 parse_admixture <- function(admixture_directory, sample_ids, id_name = "ID") {
   parser <- admixture_parser$new(admixture_directory, sample_ids, id_name)
   return(parser)
