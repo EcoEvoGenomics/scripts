@@ -31,5 +31,5 @@ jobs:
         shell: Rscript {0}
       - name: Run tests
         run: |
-          source("test/test-library.R")
+          source("tests/test-library.R")
         shell: Rscript {0}
