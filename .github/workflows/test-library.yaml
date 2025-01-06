@@ -2,12 +2,12 @@ name: Test R Library
 
 run-name: ${{ github.actor }} is testing R Library
 
-on: [push, pull_request]:
-  branches:
-    - 'main'
-    - 'setup-r-library'
-  paths:
-    - '1-resources/r-library/'
+on: [push, pull_request]
+branches:
+  - 'main'
+  - 'setup-r-library'
+paths:
+  - '1-resources/r-library/'
 
 jobs:
   test-r-library:
