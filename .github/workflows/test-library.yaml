@@ -1,5 +1,4 @@
-name: Test R Library
-
+name: Test r-library
 run-name: ${{ github.actor }} triggered unit testing of the R Library
 
 on:
@@ -11,14 +10,16 @@ on:
 
 jobs:
   test-r-library:
-    runs-on: macos-latest
+    name: Test r-library in R ${{ matrix.r-version }} on {{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+        r-version: ['4.3.3', '4.4.2']
+        
     defaults:
       run:
         working-directory: ./1-resources/r-library
-
-    strategy:
-      matrix:
-        r-version: ['4.1.1']
 
     steps:
       - name: Check out repository to runner
