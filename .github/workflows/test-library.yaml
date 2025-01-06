@@ -3,7 +3,9 @@ name: Test R Library
 run-name: ${{ github.actor }} triggered unit testing of the R Library
 
 on:
-  push:
+  pull_request:
+    branches:
+      - main
     paths:
       - '1-resources/r-library/**'
 
