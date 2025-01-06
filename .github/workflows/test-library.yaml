@@ -10,7 +10,7 @@ on:
 
 jobs:
   test-r-library:
-    name: Test r-library in R ${{ matrix.r-version }} on {{ matrix.os }}
+    name: Test r-library in R ${{ matrix.r-version }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
