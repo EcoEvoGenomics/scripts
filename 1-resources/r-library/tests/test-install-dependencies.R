@@ -6,6 +6,7 @@ install.packages(
   c(
     "testthat",
     "R6",
+    "readr",
     "stringr",
     "dplyr"
   )
