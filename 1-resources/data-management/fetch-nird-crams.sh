@@ -28,6 +28,6 @@ while read sample_id; do
     rsync -ravzhP /nird/projects/NS10082K/crams/${species}/${sample_id}* .
 done <${id_list_file}
 
-find "$PWD"/ -type f | grep *.cram | sort > crams.list
-find "$PWD"/ -type f | grep *.cram.crai | sort > crais.list
+find "$PWD"/ -type f -name "*.cram" | sort > crams.list
+find "$PWD"/ -type f -name "*.cram.crai" | sort > crais.list
 # Work end
