@@ -87,4 +87,12 @@ rm ${output_fasta_path%%.*}_mtDNA.fa_bak
 rm -rv ${tmp_directory}
 
 echo "Done."
-# End work
+
+# - END OF SCRIPT ----------------------- #
+#                                         #
+#   Originally developed by Mark Ravinet  #
+#                                         #
+#   Revised by:                           #
+#   - Erik Sandertun Røed (Jan 2025)      #
+#                                         #
+# --------------------------------------- #
