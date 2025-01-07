@@ -28,7 +28,7 @@ while read sample_id; do
     rsync -ravzhP /nird/projects/NS10082K/${species}/${sample_id}* .
 done <${id_list_file}
 
-find "$PWD"/ -type f | grep R1_* | sort > reads_forward.list
-find "$PWD"/ -type f | grep R2_* | sort > reads_reverse.list
-find "$PWD"/ -type f | grep .fastq.gz* | sort > reads_all.list
+find "$PWD"/ -type f -name "*R1_*" | sort > reads_forward.list
+find "$PWD"/ -type f -name "*R2_*" | sort > reads_reverse.list
+find "$PWD"/ -type f -name "*.fastq.gz" | sort sort > reads_all.list
 # Work end
