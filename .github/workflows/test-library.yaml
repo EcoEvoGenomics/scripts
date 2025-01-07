@@ -1,0 +1,38 @@
+name: Test r-library
+run-name: ${{ github.actor }} triggered unit testing of the R Library
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '1-resources/r-library/**'
+
+jobs:
+  test-r-library:
+    name: Test r-library in R ${{ matrix.r-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+        r-version: ['4.3.3', '4.4.2']
+        
+    defaults:
+      run:
+        working-directory: ./1-resources/r-library
+
+    steps:
+      - name: Check out repository to runner
+        uses: actions/checkout@v4
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: ${{ matrix.r-version }}
+      - name: Install required packages
+        run: |
+          source("tests/test-install-dependencies.R")
+        shell: Rscript {0}
+      - name: Run tests
+        run: |
+          source("tests/test-library.R")
+        shell: Rscript {0}
