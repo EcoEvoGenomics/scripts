@@ -11,8 +11,8 @@
 #SBATCH --tasks=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=12G
-#SBATCH --time=24:00:00
+#SBATCH --mem-per-cpu=1G
+#SBATCH --time=12:00:00
 #
 # ARRAY RANGE (NB! Match to BAMs/CRAMs in bam_or_cram_list, e.g. '--array 0-9' for ten BAMs/CRAMs)
 #SBATCH --array=0-0
