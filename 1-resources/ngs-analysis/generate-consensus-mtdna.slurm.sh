@@ -84,6 +84,9 @@ sed -i_bak -e 's/>mtDNA/>'"${sample_id}"'_mtDNA/g' ${output_fasta_path%%.*}_mtDN
 echo "Returning to $work_directory and tidying up temporary files ... "
 cd ${work_directory}
 rm ${output_fasta_path%%.*}_mtDNA.fa_bak
+rm ${output_fasta_path%%.*}.fa.gz
+rm ${output_fasta_path%%.*}.fa.gz.fai
+rm ${output_fasta_path%%.*}.fa.gz.gzi
 rm -rv ${tmp_directory}
 
 echo "Done."
