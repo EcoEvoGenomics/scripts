@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ADMIN
-#SBATCH --job-name=generate_consensus_mtdna
+#SBATCH --job-name=extract_consensus_mtdna
 #SBATCH --output=SLURM-%j-%x.out
 #SBATCH --error=SLURM-%j-%x.err
 #SBATCH --account=nn10082k
