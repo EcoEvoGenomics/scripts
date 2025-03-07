@@ -34,7 +34,7 @@ cd $reads_directory
 mkdir sample
 
 echo "Writing list of read files in directory ${reads_directory} ..."
-find "$PWD"/ -type f | grep *.fastq.gz | sort > sample/reads_sample.list
+find "$PWD"/ -type f | grep .fastq.gz | sort > sample/reads_sample.list
 
 echo "Subsampling reads ..."
 while read read_file; do

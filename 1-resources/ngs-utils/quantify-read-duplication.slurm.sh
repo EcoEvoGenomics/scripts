@@ -30,7 +30,7 @@ cd $reads_directory
 mkdir rmdup
 
 echo "Writing list of read files in directory ${reads_directory} ..."
-find "$PWD"/ -type f | grep *.fastq.gz | sort > rmdup/reads_rmdup.list
+find "$PWD"/ -type f | grep .fastq.gz | sort > rmdup/reads_rmdup.list
 
 echo "Calculating stats before rmdup ..."
 seqkit stats -To rmdup/seqkit_stats.tsv *.fastq.gz
