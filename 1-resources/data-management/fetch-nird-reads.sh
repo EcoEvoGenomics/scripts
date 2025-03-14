@@ -30,5 +30,5 @@ done <${id_list_file}
 
 find "$PWD"/ -type f -name "*R1_*" | sort > reads_forward.list
 find "$PWD"/ -type f -name "*R2_*" | sort > reads_reverse.list
-find "$PWD"/ -type f -name "*.fastq.gz" | sort sort > reads_all.list
+find "$PWD"/ -type f -name "*.fastq.gz" | sort > reads_all.list
 # Work end
