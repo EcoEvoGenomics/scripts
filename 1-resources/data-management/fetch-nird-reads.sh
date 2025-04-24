@@ -25,7 +25,7 @@ to_directory=
 cd ${to_directory}
 
 while read sample_id; do
-    rsync -ravzhP /nird/projects/NS10082K/${species}/${sample_id}* .
+    rsync -ravzhP /nird/projects/NS10082K/reads/${species}/${sample_id}* .
 done <${id_list_file}
 
 find "$PWD"/ -type f -name "*R1_*" | sort > reads_forward.list
