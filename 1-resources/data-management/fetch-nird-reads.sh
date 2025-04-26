@@ -25,10 +25,10 @@ to_directory=
 cd ${to_directory}
 
 while read sample_id; do
-    rsync -ravzhP /nird/projects/NS10082K/${species}/${sample_id}* .
+    rsync -ravzhP /nird/projects/NS10082K/reads/${species}/${sample_id}* .
 done <${id_list_file}
 
-find "$PWD"/ -type f -name "*R1_*" | sort > reads_forward.list
-find "$PWD"/ -type f -name "*R2_*" | sort > reads_reverse.list
-find "$PWD"/ -type f -name "*.fastq.gz" | sort > reads_all.list
+find "$PWD"/ -type f -name "*R1_*" | sort > fetched_reads_R1.list
+find "$PWD"/ -type f -name "*R2_*" | sort > fetched_reads_R2.list
+cat reads_forward.list reads_reverse.list | sort > fetched_reads.list
 # Work end
