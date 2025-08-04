@@ -2,9 +2,9 @@
 
 # NB!
 #
-#     1. This script requires an internet connection.
-#     On e.g. Saga, this is limited on compute nodes. Run
-#     this from a login node.
+#     1. This script requires that NIRD is mounted.
+#     On Saga, this is not the case on compute nodes.
+#     Run this from a login node.
 #
 #     2. This script can take a long time to complete.
 #     To ensure it runs to completion, run it on a
