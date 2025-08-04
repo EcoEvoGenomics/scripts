@@ -23,10 +23,10 @@ to_directory=
 
 # Work start
 cd ${to_directory}
-
+echo "NIRD CRAM FETCHER" > cramfetcher.log
 while read sample_id; do
+    echo "Fetching available CRAMs for ${species}/${sample_id} ..." >> cramfetcher.log
     rsync -ravzhP /nird/projects/NS10082K/crams/${species}/${sample_id}* .
 done <${id_list_file}
-
-find "$PWD"/ -type f -name "*.cram" | sort > crams.list
+echo "DONE" >> cramfetcher.log
 # Work end
