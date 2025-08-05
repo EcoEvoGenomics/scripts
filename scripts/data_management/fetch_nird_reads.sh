@@ -2,9 +2,9 @@
 
 # NB!
 #
-#     1. This script requires an internet connection.
-#     On e.g. Saga, this is limited on compute nodes. Run
-#     this from a login node.
+#     1. This script requires that NIRD is mounted.
+#     On Saga, this is not the case on compute nodes.
+#     Run this from a login node.
 #
 #     2. This script can take a long time to complete.
 #     To ensure it runs to completion, run it on a
@@ -23,12 +23,10 @@ to_directory=
 
 # Work start
 cd ${to_directory}
-
+echo "NIRD READ FETCHER" > readfetcher.log
 while read sample_id; do
+    echo "Fetching available reads for ${species}/${sample_id} ..." >> readfetcher.log
     rsync -ravzhP /nird/projects/NS10082K/reads/${species}/${sample_id}* .
 done <${id_list_file}
-
-find "$PWD"/ -type f -name "*R1_*" | sort > fetched_reads_R1.list
-find "$PWD"/ -type f -name "*R2_*" | sort > fetched_reads_R2.list
-cat reads_forward.list reads_reverse.list | sort > fetched_reads.list
+echo "DONE" >> readfetcher.log
 # Work end
