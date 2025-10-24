@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """
 Slurm job cost estimator: parse SBATCH headers, normalize resources, and
 calculate/print per-queue costs for single jobs and arrays.
