@@ -540,7 +540,7 @@ def print_cost_details(cost_details, threshold=10000):
         print(f"    • {stylise_string('hugemem', bold = True)}: {stylise_string(format_number(charged_task['hugemem']), 'blue', bold = True)}")
         print()
     
-    print(f"- NB: These are the costs of submitting your script {stylise_string('once', "red", bold = True)}.\n")
+    print(f"- NB: These are the costs of submitting your script {stylise_string('once', 'red', bold = True)}.\n")
 
     print(stylise_string("================= Advanced =================================\n", bold=True))
     # CPU-hours
