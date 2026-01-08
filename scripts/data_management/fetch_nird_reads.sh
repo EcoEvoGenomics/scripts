@@ -26,7 +26,7 @@ cd ${to_directory}
 echo "NIRD READ FETCHER" > readfetcher.log
 while read sample_id; do
     echo "Fetching available reads for ${species}/${sample_id} ..." >> readfetcher.log
-    rsync -ravzhP /nird/projects/NS10082K/reads/${species}/${sample_id}* .
+    rsync -ravzhP /nird/datapeak/NS10082K/reads/${species}/${sample_id}* .
 done <${id_list_file}
 echo "DONE" >> readfetcher.log
 # Work end
