@@ -23,10 +23,11 @@ to_directory=
 
 # Work start
 cd ${to_directory}
+username=$(whoami)
 echo "NIRD CRAM FETCHER" > cramfetcher.log
 while read sample_id; do
     echo "Fetching available CRAMs for ${species}/${sample_id} ..." >> cramfetcher.log
-    rsync -ravzhP /nird/datapeak/NS10082K/crams/${species}/${sample_id}* .
+    rsync -ravzhP --chown=${username}:${username} /nird/datapeak/NS10082K/crams/${species}/${sample_id}* .
 done <${id_list_file}
 echo "DONE" >> cramfetcher.log
 # Work end
